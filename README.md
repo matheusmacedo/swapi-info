@@ -1,5 +1,3 @@
-Welcome to your new TanStack app!
-
 # Getting Started
 
 To run this application:
@@ -9,23 +7,27 @@ npm install
 npm run start
 ```
 
-# Building For Production
+## Tech Stack
 
-To build this application for production:
+- React
+- Tanstack Router
+- Tanstack Query
+- Tailwind CSS
 
-```bash
-npm run build
-```
+# Overview
 
-## Testing
+This is a simple app that allows you to search for Star Wars characters using the SWAPI API.
+For documentation, see [SWAPI](https://swapi.dev/documentation).
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
+## Features
 
-```bash
-npm run test
-```
+- Search for characters by name
+- View character details
+- View planet details
+- Add characters to favorites
+- View favorites
 
-# Plan
+# Initial Plan
 
 One of the core requirements is to use the SWAPI API.
 One of the core requirements is to use search by name - SWAPI does not support this.
@@ -46,16 +48,46 @@ We'll fetch everything and filter locally. Using Tanstack Query to cache the res
 ## Bonus (Nice-to-Haves)
 
 ✅ Dark Theme
+✅ Favorites
 
 - "I'm Feeling Lucky"
 - Search by Planet
   - Add a dropdown or autocomplete to filter characters by their homeworld.
-- Favorites
-  - Allow marking characters as favorite (persist with Zustand or localStorage).
 
 ## Fluff (Extra Polish)
 
+✅ Animations & Transitions
+✅ Hover effects for better UX.
+
 - Autocomplete for Search
 - Extra Filters
-- Animations & Transitions
-- Smooth page transitions or hover effects for better UX.
+
+# Future Improvements & Notes
+
+Currently, the app fetches all characters on the home page, stores them in React Query’s cache, and filters locally.
+This keeps things simple and avoids unnecessary complexity for now. While cache invalidation could be added, it feels like overkill at this stage.
+An alternative approach would be to fetch everything once, store it in Zustand for global state, and use it to populate pages.
+
+The “I’m Feeling Lucky” feature would be easy to implement, but with the current small dataset, it’s not very useful.
+
+If this were a real-world app, here are some ideas to enhance functionality:
+
+✅ Potential Features
+• Authentication & Personalization
+• Save favorite characters for each user.
+• Share favorites with friends.
+• Allow users to leave comments on characters.
+• Search & Filtering
+• Add more filters (e.g., gender: male, female).
+• Implement autocomplete for search (e.g., typing “luke” suggests “Luke Skywalker”).
+• Display favorite characters at the top of search results.
+• Enable comparison of multiple characters.
+• Additional Pages for:
+• Planets
+• Movies
+• Vehicles
+• Species
+• Starships
+
+“I’m Feeling Lucky” just for fun, although not very useful with the current dataset.
+I would also spend more time on the design and animations so the app is more engaging and feels really good to use.
