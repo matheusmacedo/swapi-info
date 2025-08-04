@@ -1,14 +1,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
 import "./styles.css";
-
-const queryClient = new QueryClient();
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // Create a new router instance
 const router = createRouter({
@@ -19,6 +17,8 @@ const router = createRouter({
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
 });
+// Create a new query client instance for caching data
+const queryClient = new QueryClient();
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
