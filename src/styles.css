@@ -65,6 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* theming */
+/* https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
+/* I searched for Space in coolors and this was the most liked pallete, has a good contrast and good colors for light and dark mode */
 
 :root {
   --color-bg: #ffffff;
