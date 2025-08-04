@@ -90,4 +90,6 @@ If this were a real-world app, here are some ideas to enhance functionality:
 • Starships
 
 “I’m Feeling Lucky” just for fun, although not very useful with the current dataset.
-I would also spend more time on the design and animations so the app is more engaging and feels really good to use.
+I spend more time on the design and animations so the app is more engaging and feels really good to use.
+Currently implementation is missing tests - I would add unit tests and use hooks to tests it.
+There is currently no backend or proper error handling, we can improte the UI with better loading and empty states, and add E2E tests.
