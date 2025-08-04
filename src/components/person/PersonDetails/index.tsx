@@ -5,6 +5,7 @@ import PlanetDetails from "../../planet/PlanetDetails";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import PlanetResidents from "../../planet/PlanetResidents";
+import FavoritePerson from "../FavoritePerson";
 
 function PersonDetails({ person }: { person: Person }) {
   const { data: homeworld } = useFetchPlanetById(
@@ -14,16 +15,16 @@ function PersonDetails({ person }: { person: Person }) {
   return (
     <>
       <div className="flex items-center gap-4 p-4 bg-background flex-col w-full text-text">
-        <Link to="/" className="flex items-center gap-2 justify-center">
+        <Link
+          to="/"
+          className="flex items-center gap-2 justify-start w-full max-w-5xl mx-auto"
+        >
           <ArrowLeft className="w-6 h-6" /> Go Back
         </Link>
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-3 gap-6 p-4 bg-background w-full max-w-screen-lg mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <PersonAvatar person={person} size={128} />
-          <div className="flex flex-col gap-2 text-center"></div>
-        </div>
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-5 p-4 bg-background w-full max-w-screen-xl mx-auto">
+        <PersonAvatar person={person} size={128} />
 
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold text-text mb-2">Information</h3>
@@ -41,6 +42,8 @@ function PersonDetails({ person }: { person: Person }) {
             Skin Color: {person.skin_color}
           </p>
           <p className="text-sm text-gray-500">Eye Color: {person.eye_color}</p>
+
+          <FavoritePerson name={person.name} />
         </div>
 
         <div className="flex flex-col gap-4">
