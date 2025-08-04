@@ -5,7 +5,13 @@ import type { Person } from "@/types/Person";
 
 type PersonAvatarProps = Pick<Person, "name" | "gender">;
 
-function PersonAvatar({ person }: { person: PersonAvatarProps }) {
+function PersonAvatar({
+  person,
+  size = 32,
+}: {
+  person: PersonAvatarProps;
+  size?: number;
+}) {
   const avatarId =
     (Math.abs(
       person.name.split("").reduce((hash, char) => {
@@ -21,7 +27,7 @@ function PersonAvatar({ person }: { person: PersonAvatarProps }) {
     <img
       src={avatarUrl}
       alt={`Avatar for ${person.name}`}
-      className="w-32 h-32 rounded-full object-cover"
+      className={`w-${size} h-${size} rounded-full object-cover`}
     />
   );
 }

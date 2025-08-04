@@ -14,7 +14,7 @@ function RouteComponent() {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="flex items-center gap-4 p-4 bg-bg rounded-lg flex-col">
+    <div className="flex items-center gap-4 p-4 bg-background flex-col">
       <PersonDetails person={data} />
     </div>
   );
