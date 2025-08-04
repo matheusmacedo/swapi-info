@@ -29,40 +29,33 @@ npm run test
 
 One of the core requirements is to use the SWAPI API.
 One of the core requirements is to use search by name - SWAPI does not support this.
-I'll store the data locally to cache the results. I'll use zustand to mimic a database.
+We'll fetch everything and filter locally. Using Tanstack Query to cache the results.
 
 ## MVP (Must-Have Features)
 
-- Fetch and Display People
-  - Get data from SWAPI and display a list of characters.
-- Show basic info (name, gender, birth year).
-- Character Detail Page
-  - Clicking a character shows detailed info (height, mass, homeworld, films).
-  - Fetch related data (e.g., planet name instead of URL).
-- Search by Name
-  - Implement input to filter characters locally (case-insensitive).
-  - Use state to store fetched characters for quick filtering.
-- Responsive Layout
-  - Ensure the UI works on mobile and desktop.
-- Empty States
-  - Show a message for no results when search returns nothing.
+✅ Fetch and Display People
+✅ Show basic info (name, gender, birth year).
+✅ Character Detail Page
+✅ Clicking a character shows detailed info (homeworld).
+✅ Fetch related data (e.g., planet name and residents of planet).
+
+✅ Search by Name
+✅ Responsive Layout
+✅ Empty States
 
 ## Bonus (Nice-to-Haves)
 
+✅ Dark Theme
+
+- "I'm Feeling Lucky"
 - Search by Planet
   - Add a dropdown or autocomplete to filter characters by their homeworld.
 - Favorites
   - Allow marking characters as favorite (persist with Zustand or localStorage).
-- Dark Theme
-  - Implement light/dark theme toggle using Tailwind with CSS variables.
-- "I'm Feeling Lucky"
-  - Randomly navigate to a character detail page.
 
 ## Fluff (Extra Polish)
 
 - Autocomplete for Search
 - Extra Filters
-- Planet Detail Page
-- Clicking on a planet name navigates to a planet info page.
 - Animations & Transitions
 - Smooth page transitions or hover effects for better UX.
