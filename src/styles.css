@@ -72,12 +72,12 @@ h1, h2, h3, h4, h5, h6 {
   --color-bg: #ffffff;
   --color-fg: #e5e5e5;
   --color-text: #14213d;
-  --color-accent: #fca311;
+  --color-accent: #845EC2;
 }
 
 [data-theme="dark"] {
   --color-bg: #000000;
   --color-fg: #14213d;
   --color-text: #e5e5e5;
-  --color-accent: #fca311;
+  --color-accent: #845EC2;
 }

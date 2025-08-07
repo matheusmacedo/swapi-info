@@ -27,7 +27,7 @@ function PersonAvatar({
     <img
       src={avatarUrl}
       alt={`Avatar for ${person.name}`}
-      className={`w-${size} h-${size} rounded-full object-cover`}
+      className={`w-${size} h-${size} rounded-full`}
     />
   );
 }

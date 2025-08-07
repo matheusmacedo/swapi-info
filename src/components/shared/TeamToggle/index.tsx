@@ -23,7 +23,7 @@ function TeamToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-3 bg-foreground text-text rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-200 z-50"
+      className="p-3 bg-accent text-white rounded-full hover:bg-opacity-80 transition-all duration-200 z-50"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {isDark ? (

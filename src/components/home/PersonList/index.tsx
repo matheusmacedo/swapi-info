@@ -3,6 +3,7 @@ import PersonCard from "../../person/PersonCard";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocalStorage } from "usehooks-ts";
+import { SearchIcon, StarIcon } from "lucide-react";
 
 function PersonList({ data }: { data: Person[] }) {
   const [filteredData, setFilteredData] = useState(data);
@@ -27,25 +28,28 @@ function PersonList({ data }: { data: Person[] }) {
 
   return (
     <div className="h-screen flex flex-col min-w-full">
-      <div className="w-full p-4 sticky top-0 z-10 flex flex-row gap-2">
+      <div className="w-full p-1 flex flex-row gap-2 rounded-full bg-background px-3 items-center border border-gray-200 max-w-5xl mx-auto mb-5">
+        <SearchIcon
+          style={{
+            color: "var(--accent)",
+          }}
+        />
         <input
           type="text"
           minLength={3}
           maxLength={100}
           placeholder="Search by name"
           onChange={(e) => handleSearch(e.target.value)}
-          className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent w-full"
+          className="rounded-lg w-full focus:outline-none text-base bg-background"
         />
 
-        <div>
-          <button
-            className="text-sm w-full font-bold whitespace-nowrap uppercase bg-accent p-2 rounded-lg h-full text-background"
-            type="button"
-            onClick={handleFavoriteFilter}
-          >
-            get favorites
-          </button>
-        </div>
+        <button
+          className="text-sm w-fit whitespace-nowrap text-text p-2 rounded-lg h-full flex items-center gap-1 hover:text-accent transition-all duration-300"
+          type="button"
+          onClick={handleFavoriteFilter}
+        >
+          <StarIcon /> Favorites
+        </button>
       </div>
 
       <AnimatePresence mode="sync">
@@ -54,7 +58,7 @@ function PersonList({ data }: { data: Person[] }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="overflow-y-auto p-4 bg-background grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          className="p-4 bg-background grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
         >
           {filteredData?.map((person: Person) => (
             <motion.li
@@ -64,7 +68,7 @@ function PersonList({ data }: { data: Person[] }) {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <PersonCard person={person} />
+              <PersonCard person={person} avatarSize={32} />
             </motion.li>
           ))}
         </motion.ul>
