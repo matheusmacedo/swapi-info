@@ -65,8 +65,8 @@ We'll fetch everything and filter locally. Using Tanstack Query to cache the res
 # Future Improvements & Notes
 
 Currently, the app fetches all characters on the home page, stores them in React Query’s cache, and filters locally.
-This keeps things simple and avoids unnecessary complexity for now. While cache invalidation could be added, it feels like overkill at this stage.
-An alternative approach would be to fetch everything once, store it in Zustand for global state, and use it to populate pages.
+This keeps things simple and avoids unnecessary complexity for now. While cache invalidation could be added, it feels like overkill at this stage. An alternative approach would be to fetch everything once, store it in Zustand for global state, and use it to populate pages.
+Add search params to the URL to persist the search and filter state.
 
 The “I’m Feeling Lucky” feature would be easy to implement, but with the current small dataset, it’s not very useful.
 
