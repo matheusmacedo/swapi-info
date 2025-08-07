@@ -6,6 +6,7 @@ import { useLocalStorage } from "usehooks-ts";
 
 function PersonList({ data }: { data: Person[] }) {
   const [filteredData, setFilteredData] = useState(data);
+  const [favoriteEnabled, setFavoriteEnabled] = useState(false);
   const [favoritePeople, setFavoritePeople] = useLocalStorage<string[]>(
     "favoritePeople",
     []
@@ -19,10 +20,15 @@ function PersonList({ data }: { data: Person[] }) {
   };
 
   const handleFavoriteFilter = () => {
-    const filteredData = data.filter((person) =>
-      favoritePeople.includes(person.name)
-    );
-    setFilteredData(filteredData);
+    setFavoriteEnabled(!favoriteEnabled);
+    if (favoriteEnabled) {
+      const filteredData = data.filter((person) =>
+        favoritePeople.includes(person.name)
+      );
+      setFilteredData(filteredData);
+    } else {
+      setFilteredData(data);
+    }
   };
 
   return (
@@ -43,7 +49,7 @@ function PersonList({ data }: { data: Person[] }) {
             type="button"
             onClick={handleFavoriteFilter}
           >
-            get favorites
+            get favorites {favoriteEnabled ? "on" : "off"}
           </button>
         </div>
       </div>

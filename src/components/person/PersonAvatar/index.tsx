@@ -7,7 +7,7 @@ type PersonAvatarProps = Pick<Person, "name" | "gender">;
 
 function PersonAvatar({
   person,
-  size = 32,
+  size = 300,
 }: {
   person: PersonAvatarProps;
   size?: number;
@@ -21,14 +21,19 @@ function PersonAvatar({
       100) +
     1;
 
-  const avatarUrl = `https://avatar.iran.liara.run/public/${avatarId}`;
+  const avatarUrl = `https://avatar.iran.liara.run/public/${
+    person.gender === "male" ? "boy" : "girl"
+  }?username=${avatarId}`;
 
   return (
-    <img
-      src={avatarUrl}
-      alt={`Avatar for ${person.name}`}
-      className={`w-${size} h-${size} rounded-full object-cover`}
-    />
+    <div className={`w-full h-[${size}px]`}>
+      <img
+        loading="lazy"
+        src={avatarUrl}
+        alt={`Avatar for ${person.name}`}
+        className={`w-[${size}px] h-[${size}px] rounded-full object-cover`}
+      />
+    </div>
   );
 }
 
