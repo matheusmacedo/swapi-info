@@ -13,7 +13,7 @@ function App() {
   if (error || !data?.length) return <div>Error: {error?.message}</div>;
 
   return (
-    <div className="min-h-screen flex text-2xl items-center justify-center text-text bg-background p-4">
+    <div className="min-h-screen flex text-2xl items-center justify-center text-text bg-background">
       <PersonList data={data} />
     </div>
   );

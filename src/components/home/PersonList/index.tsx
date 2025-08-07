@@ -27,8 +27,8 @@ function PersonList({ data }: { data: Person[] }) {
   };
 
   return (
-    <div className="h-screen flex flex-col min-w-full">
-      <div className="w-full p-1 flex flex-row gap-2 rounded-full bg-background px-3 items-center border border-gray-200 max-w-5xl mx-auto mb-5">
+    <div className="h-screen flex flex-col min-w-full bg-background">
+      <div className="w-full flex flex-row gap-2 rounded-full bg-background px-3 items-center border border-gray-200 max-w-5xl mx-auto mb-5">
         <SearchIcon
           style={{
             color: "var(--accent)",

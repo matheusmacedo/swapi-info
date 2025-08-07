@@ -24,7 +24,7 @@ function PersonDetails({ person }: { person: Person }) {
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-3 gap-5 p-4 bg-background w-full max-w-screen-xl mx-auto">
-        <PersonAvatar person={person} size={10} />
+        <PersonAvatar person={person} />
 
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold text-text mb-2">Information</h3>

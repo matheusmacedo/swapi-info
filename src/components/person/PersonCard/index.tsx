@@ -34,9 +34,9 @@ function PersonCard({
               },
             }}
           >
-            <PersonAvatar person={person} size={avatarSize} />
+            <PersonAvatar person={person} />
           </motion.div>
-          <h2 className="text-2xl font-bold text-text block mt-">
+          <h2 className="text-2xl font-bold text-text block text-center mt-5">
             {person.name}
           </h2>
           <motion.div
